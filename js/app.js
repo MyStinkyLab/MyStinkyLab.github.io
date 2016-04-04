@@ -50,7 +50,7 @@ var app = (function () {
   }
 })();
 
-window.addEventListener('load', function (e) {
+window.addEventListener('DOMContentLoaded', function (e) {
   app.loadBanner();
   app.navbarFixer();
-}, false)
+}, false);
