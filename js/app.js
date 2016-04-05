@@ -45,11 +45,10 @@
 	
 
   loadBanner();
-
   navbarFixer();
 })();
 
-// window.addEventListener('DOMContentLoaded', function (e) {
-//   app.loadBanner();
-//   app.navbarFixer();
-// }, false);
+//window.addEventListener('DOMContentLoaded', function (e) {
+  //app.loadBanner();
+  //app.navbarFixer();
+//}, false);
