@@ -1,4 +1,4 @@
-var app = (function () {
+(function () {
 	// Funcionalidad para cargar la imagen del header.
   var loadBanner = function () {
     var bannerSmall = document.querySelector('.banner-small')
@@ -44,13 +44,12 @@ var app = (function () {
 	// Funcionalidad para plugin sharrre...
 	
 
-  return {
-    loadBanner: loadBanner,
-    navbarFixer: navbarFixer
-  }
+  loadBanner();
+
+  navbarFixer();
 })();
 
-window.addEventListener('DOMContentLoaded', function (e) {
-  app.loadBanner();
-  app.navbarFixer();
-}, false);
+// window.addEventListener('DOMContentLoaded', function (e) {
+//   app.loadBanner();
+//   app.navbarFixer();
+// }, false);
