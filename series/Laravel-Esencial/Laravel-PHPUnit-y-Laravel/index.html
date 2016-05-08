@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Laravel - PHPUnit y Laravel | My Stinky Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+  <nav class="app-nav" id="app-nav">
+    <div class="name-page">
+        <img src="/images/logo.svg">
+        <h2>
+         My Stinky Lab
+        </h2>
+    </div>
+    <div class="items">
+      <a class="" href="/">home</a><a class="active" href="/series">series</a><a class="" href="/about">about</a>
+    </div>
+</nav>
+
+  <header class="app-header">
+  <section class="banner">
+    <p class="banner__text">
+      Aquel que contribuye al desarrollo abierto, entiende lo asombroso de este mundo
+    </p>
+    <!-- http://daverupert.com/2015/12/intrinsic-placeholders-with-picture/ -->
+    <div class="placeholder"></div>
+    <img
+      class="banner-small"
+      data-src="/images/banner-large-2.jpg"
+      src="/images/banner-small-2.png"
+      alt="banner"
+    >
+  </section>
+
+  <section class="description">
+    <img class="avatar" src="/images/logo.svg" alt="avatar" width="100" height="100"/>
+    <h1 class="title"> My Stinky Lab </h1>
+    <h3 class="subtitle"> Experimentando el Autoaprendizaje </h3>
+  </section>
+
+  <ul class="social-list">
+    <a href="https://twitter.com/MyStinkyLab" class="red twitter" target="_blank">Twitter</a>
+    <a href="https://github.com/MyStinkyLab" class="red github" target="_blank">GitHub</a>
+    <a href="http://google.com/" class="red gplus" target="_blank">Google+</a>
+  </ul>
+</header>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/series/Laravel-Esencial/Laravel-PHPUnit-y-Laravel/">Laravel - PHPUnit y Laravel</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">May 08 2016</p>
+  </section>
+
+  <section class="article-entry">
+    <p>Como parte fundamental detrás de la filosofía de <strong>Laravel</strong>, se encuentra el objetivo de incentivar a los desarrolladores a que <strong>prueben su código</strong>, a que pierdan ese miedo y profesionalizen su flujo de trabajo.</p>
+<p>El <strong>Testing</strong>, no es algo nuevo, pero es sabido que el porcentaje de desarrolladores que realizan pruebas a sus aplicaciones es casi infima. Incluso hay quienes siguen sosteniendo que es algo inútil e incluso una perdida total de tiempo. Hay quienes continúan yendo a su navegador, realizando la clásica prueba manual en sus formularios, para observar luego, si en la base de datos, todos los datos fueron guardados correctamente. Eso, es una perdida total de tiempo, además de ser lo mas tedioso e ineficiente que hay en materia de corroborar que nuestra aplicación <em>hace lo que debe hacer</em>.</p>
+<p><strong>Laravel</strong>, por su parte, nos trae una implementación propia de <a href="https://phpunit.de/" target="_blank" rel="external">PHPUnit</a>, logrando  que la aproximación a esta manera mas profesional de desarrollar, sea menos traumática.</p>
+<p>Pero ¿Qué es <strong>PHPUnit</strong>?</p>
+<p>Según su página oficial:</p>
+<blockquote>
+<p>PHPUnit es un framework de pruebas orientado al programador para PHP. Es un ejemplo de la arquitectura xUnit para marcos de pruebas unitarias.</p>
+</blockquote>
+<p>Es decir, que tenemos disponible un framework dentro de nuestro framwork, pero exclusivo para realizar pruebas a nuestra aplicación.</p>
+<p><strong>Laravel</strong>, agrega nuevos métodos que hacen que el proceso de <em>testeo</em> sea mas <strong>limpio</strong> e <strong>intuitivo</strong>. Y lo mejor de todo, es que no necesitas instalar nada mas, está todo allí, listo para ser utilizado. Puedes comprobarlo abriendo una consola, posicionándote en la carpeta de tu proyecto (en nuestro caso <em>LaravelSerie</em>), y ejecutando:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php vendor\phpunit\phpunit\phpunit</span><br></pre></td></tr></table></figure>
+<p>Obtendrás una salida algo similar a esto:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PHPUnit 4.8.24 by Sebastian Bergmann and contributors.</span><br><span class="line"></span><br><span class="line">.</span><br><span class="line"></span><br><span class="line">Time: 7.24 seconds, Memory: 8.75Mb</span><br><span class="line"></span><br><span class="line">OK (1 <span class="built_in">test</span>, 2 assertions)</span><br></pre></td></tr></table></figure>
+<p>Como podrás observar, <strong>Laravel</strong> además de traer ya por defecto una implementación de <strong>PHPUnit</strong>, trae consigo una prueba a manera de ejemplo.</p>
+<p>La última línea, nos indica que hubo dos afirmaciones correctas sobre una prueba realizada. Es decir, que nos confirma que se cumplió lo que habíamos supuesto que la aplicación debía hacer. Diciéndolo de otra manera, la aplicación <em>hace lo que debe hacer</em>.</p>
+<p>Por último, nos queda ver el código de prueba que trae <strong>Laravel</strong> a manera de ejemplo:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">WithoutMiddleware</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">DatabaseMigrations</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">DatabaseTransactions</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * A basic functional test example.</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@return</span> void</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testBasicExample</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        $this-&gt;visit(<span class="string">'/'</span>)</span><br><span class="line">             -&gt;see(<span class="string">'Laravel 5'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Una clase normal, común y corriente. Nada del otro mundo. Eso es todo. Nada de monstruos, nada de palabras inentendibles, ni nada mas alla de nuestra comprensión. Y no es una exageración si te digo que se puede hasta leer de qué se trata y qué se está trantado de probar: <code>ésta (prueba) visita &#39;/&#39; y ve &quot;Laravel 5&quot;</code>.</p>
+<p>Quedémonos, por un momento, con el método <code>testBasicExample</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testBasicExample</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    $this-&gt;visit(<span class="string">'/'</span>)</span><br><span class="line">         -&gt;see(<span class="string">'Laravel 5'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>El prefijo <code>test</code> en el nombre del método, indica a <strong>PHPUnit</strong> que es una prueba, y que debe ejecutarse como tal. Aquellos métodos que no la contengan, no serán tratados como pruebas, y podrán ser utilizadas por éstas para su funcionamiento.</p>
+<p>Si prestas atención al contenido del método, <code>visit</code> y <code>see</code>, son métodos que no se ejecutan como pruebas sino como <a href="https://es.wikipedia.org/wiki/Aserci%C3%B3n_(inform%C3%A1tica" target="_blank" rel="external"><em>aserciones</em></a>, y, así como éstos, también podemos contar con nuestros propios métodos que no sean ni <strong>pruebas</strong> ni <strong>aserciones</strong>, lo que nos da una gran flexibilidad a la hora de organizar nuestro código.</p>
+<p>Hablaremos mas en profundidad de las aserciones y los métodos que traen tanto <strong>Laravel</strong> como <strong>PHPUnit</strong>, a medida que vayamos profundizando en la serie de <strong>Laravel Esencial</strong>. La idea detrás de esta serie, es que ademas de que ver las características de <strong>Laravel</strong>, también veamos cómo y de qué maneras se pueden probar con PHPUnit y su implementación en <strong>Laravel</strong>.</p>
+<p>Hasta aquí llega entonces este capítulo dedicado a dar una pequeña introducción al <strong>testing</strong> en este maravilloso Framework.</p>
+<p>Sólo queda comentarte que todo el desarrollo de la serie se estará guardando en su propio <a href="/">Repositorio de GitHub</a>.</p>
+<p>Deja un comentario debajo contando que te ha parecido el capítulo y de lo que va de la serie hasta el momento, o si es que has tenido algún inconveniente con algo de lo que se haya visto, y no te olvides de quedarte para nuestro próximo capítulo.</p>
+<p>Ahora si, un saludo y ¡hasta la próxima!</p>
+
+  </section>
+
+  <div class="tags">
+    <p>Aquí hemos visto: </p>
+    
+    
+        <span class="tag">laravel</span>
+    
+        <span class="tag">PHPUnit</span>
+    
+        <span class="tag">testing</span>
+    
+        <span class="tag">tdd</span>
+    
+        <span class="tag">aserciones</span>
+    
+</div>
+
+</article>
+
+  <div class="issues">
+	<p>Si has encontrado algo erróneo, deseas realizar una corrección o simplemente deseas agregar o mejorar algo</p>
+	<a href="https://github.com/MyStinkyLab/MyStinkyLab-site-source/issues/new">Abre un nuevo Issue</a>
+</div>
+  <div class="sharing">
+  <section class="profile">
+    <img class="avatar" src="/images/logo.svg" alt="avatar" />
+    <div>
+      <p class="title"> My Stinky Lab </p>
+      <p class="subtitle"> Experimentando el Autoaprendizaje </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <p class="message"> Si te gustó, compártelo!~ </p>
+    <div class="social-btns">
+      <div class="button twitter"><a
+  class="twitter-share-button"
+  href='https://twitter.com/intent/tweet?text=Me ha interesado el post <a href="http://MyStinkyLab.github.io/series/Laravel-Esencial/Laravel-PHPUnit-y-Laravel/">Laravel - PHPUnit y Laravel</a> via @fergthh'
+>
+  Tweet
+</a>
+</div>
+      <div class="button fb"><a class="fb-share-button" href="http://MyStinkyLab.github.io/series/Laravel-Esencial/Laravel-PHPUnit-y-Laravel/">
+Facebook
+</a></div>
+      <div class="button gplus"><a href="https://plus.google.com/share?url=http://MyStinkyLab.github.io/series/Laravel-Esencial/Laravel-PHPUnit-y-Laravel/">Google</a></div>
+    </div>
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'MyStinkyLab';
+  
+  var disqus_url = 'http://MyStinkyLab.github.io/series/Laravel-Esencial/Laravel-PHPUnit-y-Laravel/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+  <footer class="app-footer">
+	<p>
+		Desarrollado por <a href="https://github.com/MyStinkyLab" target="_blank">My Stinky Lab</a> | 
+		Basado en <a href="https://github.com/DrakeLeung/hexo-theme-again">Again - Hexo Theme</a>
+	</p>
+	<p> Powered by <a href="https://hexo.io.com"> Hexo </a> <p>
+</footer>
+
+  <script type="text/javascript">
+  console.log(document.getElementsByTagName('main')[0].classList[0]);
+  </script>
+  <script type="text/javascript" src="/js/app.js" async></script>
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Open+Sans::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+</body>
+</html>

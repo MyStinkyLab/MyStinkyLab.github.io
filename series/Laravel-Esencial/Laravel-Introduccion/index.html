@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Laravel - Introducción | My Stinky Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+  <nav class="app-nav" id="app-nav">
+    <div class="name-page">
+        <img src="/images/logo.svg">
+        <h2>
+         My Stinky Lab
+        </h2>
+    </div>
+    <div class="items">
+      <a class="" href="/">home</a><a class="active" href="/series">series</a><a class="" href="/about">about</a>
+    </div>
+</nav>
+
+  <header class="app-header">
+  <section class="banner">
+    <p class="banner__text">
+      Aquel que contribuye al desarrollo abierto, entiende lo asombroso de este mundo
+    </p>
+    <!-- http://daverupert.com/2015/12/intrinsic-placeholders-with-picture/ -->
+    <div class="placeholder"></div>
+    <img
+      class="banner-small"
+      data-src="/images/banner-large-2.jpg"
+      src="/images/banner-small-2.png"
+      alt="banner"
+    >
+  </section>
+
+  <section class="description">
+    <img class="avatar" src="/images/logo.svg" alt="avatar" width="100" height="100"/>
+    <h1 class="title"> My Stinky Lab </h1>
+    <h3 class="subtitle"> Experimentando el Autoaprendizaje </h3>
+  </section>
+
+  <ul class="social-list">
+    <a href="https://twitter.com/MyStinkyLab" class="red twitter" target="_blank">Twitter</a>
+    <a href="https://github.com/MyStinkyLab" class="red github" target="_blank">GitHub</a>
+    <a href="http://google.com/" class="red gplus" target="_blank">Google+</a>
+  </ul>
+</header>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/series/Laravel-Esencial/Laravel-Introduccion/">Laravel - Introducción</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">May 06 2016</p>
+  </section>
+
+  <section class="article-entry">
+    <p>Bienvenido a este primer episodio de la serie <em>Laravel Esencial</em> . Aquí daremos los primeros pasos necesarios para introducirnos en el mundo del desarrollo con <strong>Laravel</strong> .</p>
+<h2 id="¿Que-es-Laravel"><a href="#¿Que-es-Laravel" class="headerlink" title="¿Qué es Laravel?"></a>¿Qué es Laravel?</h2><p><strong>Laravel</strong> es un framework para aplicaciones web, que ha revolucionado la manera de desarrollar en PHP. Como todo framework, trae consigo muchos <strong>features</strong>  que se encuentran  ya implementados, como la autenticación, el enrutamiento, las sesiones, la cola de tareas, el manejo del caché y un largo etcétera. Todos listos para ser aplicados en nuestra aplicación.</p>
+<p>Pero no es esto lo que lo hace especial. Lo que logra que <strong>Laravel</strong> sea increíblemente asombroso, es la importancia con la que se trata a las <strong>buenas prácticas</strong> de desarrollo y a los principales <strong>patrones de diseño</strong> como <strong>SOLID</strong>, por ejemplo.</p>
+<p><strong>Laravel</strong> llegó para demostrar, tanto a viejas y nuevas generaciones de desarrolladores, que las <strong>buenas prácticas</strong>, y por sobre todo los <strong>patrones de diseño</strong>, no son monstruos inalcanzables e inentendibles, y coloca en evidencia las ventajas y rendimientos que se logran cuando se coloca algo mas que sólo código en una aplicación.</p>
+<p>Antes de comenzar a desarrollar con esta maravillosa herramienta, debemos hacer un pequeño parate para hablar un poco de algo primordial y que utilizaremos en nuestra vida diaria con este framework, <em>Composer</em>.</p>
+<h2 id="¿Que-es-Composer"><a href="#¿Que-es-Composer" class="headerlink" title="¿Qué es Composer?"></a>¿Qué es Composer?</h2><p><img src="https://getcomposer.org/img/logo-composer-transparent2.png" alt="Composer"> </p>
+<p>Tal como lo dice en su <a href="https://getcomposer.org" target="_blank" rel="external">sitio web</a>:</p>
+<blockquote>
+<p><strong>Composer</strong> es una herramienta para gestionar las dependencias en PHP. Con esto se le permite declarar las bibliotecas <em>(librerías)</em> de las que depende su proyecto y las administra (instala / actualiza) por usted.</p>
+</blockquote>
+<p>Tanto su instalación como los requerimientos necesarios para llevarlo a cabo, son sencillos. Se necesita como mínimo PHP 5.3.2+ y al ser multiplataforma, su funcionamiento es igual en los principales entornos de desarrollo.</p>
+<p>Se encuentra disponible para <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx" target="_blank" rel="external">Linux, Unix y OSX</a>, como para <a href="https://getcomposer.org/doc/00-intro.md#installation-windows" target="_blank" rel="external">Windows</a>.</p>
+<p>Luego de su instalación cierra cualquier <em>consola</em> que tengas abierta, abre una nueva y comprueba que todo funciona correctamente de la siguiente manera:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\username&gt;composer -V</span><br><span class="line">Composer version 1.0.0 2016-01-10 20:34:53</span><br></pre></td></tr></table></figure>
+<p>Deberías ver algo similar a la segunda linea como resultado. En caso contrario, verifica nuevamente que has realizado todos los pasos correctamente, y sino deja un comentario con el error y los pasos que llevaste a cabo, y asi poder ayudarte.</p>
+<p>Una vez tengamos <em>Composer</em> correctamente en nuestra máquina, podemos continuar con la <em>instalación de Laravel</em>.</p>
+<h2 id="Instalando-Laravel"><a href="#Instalando-Laravel" class="headerlink" title="Instalando Laravel"></a>Instalando Laravel</h2><blockquote>
+<p>Durante el transcurso de esta <strong>serie</strong>, haremos uso de la versión <em>5.1 LTS de Laravel</em>. Esto se debe a que es la versión que contará con mantenimiento  a largo plazo.</p>
+</blockquote>
+<h3 id="Requerimientos-del-Servidor"><a href="#Requerimientos-del-Servidor" class="headerlink" title="Requerimientos del Servidor"></a>Requerimientos del Servidor</h3><ul>
+<li>PHP &gt;= 5.5.9 </li>
+<li>OpenSSl PHP Extension.</li>
+<li>PDO PHP Extension</li>
+<li>Mbstring PHP Extension.</li>
+<li>Tokenizer PHP Extension.</li>
+</ul>
+<p>Todos los requerimientos de se encuentran satisfechos la mayoria de <strong>entornos de desarrollo</strong> como <a href="https://www.apachefriends.org/es/index.html" target="_blank" rel="external">Xampp</a>, <a href="http://www.wampserver.es/" target="_blank" rel="external">Wampp</a>, <a href="https://laragon.org/" target="_blank" rel="external">Laragon</a>, <a href="https://laravel.com/docs/5.2/valet" target="_blank" rel="external">Laravel Valet</a>, <a href="https://laravel.com/docs/5.1/homestead" target="_blank" rel="external">Homestead</a>. En lo personal, al estar desarrollando bajo <strong>Windows</strong>, opto por <a href="https://laragon.org/" target="_blank" rel="external">Laragon</a>.</p>
+<h3 id="Instalando-con-Composer"><a href="#Instalando-con-Composer" class="headerlink" title="Instalando con Composer."></a>Instalando con Composer.</h3><p><strong>Laravel</strong> es sencillo de instalar. Tan sólo abre una consola, situate en la carpeta que te indique tu <strong>entorno de desarrollo</strong>, y coloca:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project laravel/laravel LaravelSerie <span class="string">"5.1.*"</span></span><br></pre></td></tr></table></figure>
+<p>Luego desde la consola, ingresa a la carpeta <em>LaravelSerie</em> y escribe:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan</span><br></pre></td></tr></table></figure>
+<p>Al presionar <strong>Enter</strong>, se deberían listar todos los comandos disponibles. ¡Listo ya tienes Laravel funcionando!</p>
+<p>Puedes probar tambien colocando</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan serve</span><br></pre></td></tr></table></figure>
+<p>Ahora accede desde tu navegador a <code>http://localhost:8000</code>, deberías ver <em>Laravel 5</em> centrado en la pantalla.</p>
+<p>En caso de que eso no ocurriera, coloca un comentario con el error y trataré de ayudarte.</p>
+<p>Con ésto finalizaríamos este primer capítulo de la <strong>Serie de Laravel</strong>.</p>
+<p>Sólo queda comentarte que todo el desarrollo de la serie se estará guardando en su propio <a href="/">Repositorio de GitHub</a>.</p>
+<p>Deja un comentario debajo contando que te ha parecido el capítulo y de lo que va de la serie hasta el momento, o si es que has tenido algún inconveniente con algo de lo que se haya visto, y no te olvides de quedarte para nuestro próximo capítulo.</p>
+<p>Ahora si, un saludo y ¡hasta la próxima!</p>
+
+  </section>
+
+  <div class="tags">
+    <p>Aquí hemos visto: </p>
+    
+    
+        <span class="tag">laravel</span>
+    
+        <span class="tag">composer</span>
+    
+        <span class="tag">requerimientos de servidor</span>
+    
+</div>
+
+</article>
+
+  <div class="issues">
+	<p>Si has encontrado algo erróneo, deseas realizar una corrección o simplemente deseas agregar o mejorar algo</p>
+	<a href="https://github.com/MyStinkyLab/MyStinkyLab-site-source/issues/new">Abre un nuevo Issue</a>
+</div>
+  <div class="sharing">
+  <section class="profile">
+    <img class="avatar" src="/images/logo.svg" alt="avatar" />
+    <div>
+      <p class="title"> My Stinky Lab </p>
+      <p class="subtitle"> Experimentando el Autoaprendizaje </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <p class="message"> Si te gustó, compártelo!~ </p>
+    <div class="social-btns">
+      <div class="button twitter"><a
+  class="twitter-share-button"
+  href='https://twitter.com/intent/tweet?text=Me ha interesado el post <a href="http://MyStinkyLab.github.io/series/Laravel-Esencial/Laravel-Introduccion/">Laravel - Introducción</a> via @fergthh'
+>
+  Tweet
+</a>
+</div>
+      <div class="button fb"><a class="fb-share-button" href="http://MyStinkyLab.github.io/series/Laravel-Esencial/Laravel-Introduccion/">
+Facebook
+</a></div>
+      <div class="button gplus"><a href="https://plus.google.com/share?url=http://MyStinkyLab.github.io/series/Laravel-Esencial/Laravel-Introduccion/">Google</a></div>
+    </div>
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'MyStinkyLab';
+  
+  var disqus_url = 'http://MyStinkyLab.github.io/series/Laravel-Esencial/Laravel-Introduccion/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+  <footer class="app-footer">
+	<p>
+		Desarrollado por <a href="https://github.com/MyStinkyLab" target="_blank">My Stinky Lab</a> | 
+		Basado en <a href="https://github.com/DrakeLeung/hexo-theme-again">Again - Hexo Theme</a>
+	</p>
+	<p> Powered by <a href="https://hexo.io.com"> Hexo </a> <p>
+</footer>
+
+  <script type="text/javascript">
+  console.log(document.getElementsByTagName('main')[0].classList[0]);
+  </script>
+  <script type="text/javascript" src="/js/app.js" async></script>
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Open+Sans::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+</body>
+</html>

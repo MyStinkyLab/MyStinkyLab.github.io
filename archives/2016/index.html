@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Fergthh</title>
+  <title>My Stinky Lab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/app.css">
@@ -11,9 +11,9 @@
 <body>
   <nav class="app-nav" id="app-nav">
     <div class="name-page">
-        <img src="/images/avatar-2.png">
+        <img src="/images/logo.svg">
         <h2>
-         Fergthh
+         My Stinky Lab
         </h2>
     </div>
     <div class="items">
@@ -24,10 +24,7 @@
   <header class="app-header">
   <section class="banner">
     <p class="banner__text">
-      Aquellos que contribuyen al desarrollo abierto
-    </p>
-    <p class="banner__text">
-      Entienden lo asombroso de este mundo
+      Aquel que contribuye al desarrollo abierto, entiende lo asombroso de este mundo
     </p>
     <!-- http://daverupert.com/2015/12/intrinsic-placeholders-with-picture/ -->
     <div class="placeholder"></div>
@@ -40,14 +37,14 @@
   </section>
 
   <section class="description">
-    <img class="avatar" src="/images/avatar-2.png" alt="avatar" width="100" height="100"/>
-    <h1 class="title"> Fergthh </h1>
-    <h3 class="subtitle"> Nunca lo olvides: Programa, disfruta y diviértete haciéndolo </h3>
+    <img class="avatar" src="/images/logo.svg" alt="avatar" width="100" height="100"/>
+    <h1 class="title"> My Stinky Lab </h1>
+    <h3 class="subtitle"> Experimentando el Autoaprendizaje </h3>
   </section>
 
   <ul class="social-list">
-    <a href="https://twitter.com/fergthh" class="red twitter" target="_blank">Twitter</a>
-    <a href="https://github.com/fergthh" class="red github" target="_blank">GitHub</a>
+    <a href="https://twitter.com/MyStinkyLab" class="red twitter" target="_blank">Twitter</a>
+    <a href="https://github.com/MyStinkyLab" class="red github" target="_blank">GitHub</a>
     <a href="http://google.com/" class="red gplus" target="_blank">Google+</a>
   </ul>
 </header>
@@ -55,17 +52,29 @@
   <main class="archive">
   
   <div class="cantidad_episodios">
-  	Esta serie cuenta con 1 capítulo... por ahora!
+  	Esta serie cuenta con 2 capítulos... por ahora!
   </div>
   
   
     <article>
   <h1 class="article-title">
-    <a href="/series/Javascript/hello-world/">Hola Mundo</a>
+    <a href="/series/Laravel-Esencial/Laravel-Introduccion/">Laravel - Introducción</a>
   </h1>
 
   <div class="article-meta">
-    <span class="article-date">19 Mar 2016</span>
+    <span class="article-date">06 May 2016</span>
+  </div>
+</article>
+
+    <div class="divide"></div>
+  
+    <article>
+  <h1 class="article-title">
+    <a href="/series/Laravel-Esencial/Laravel-PHPUnit-y-Laravel/">Laravel - PHPUnit y Laravel</a>
+  </h1>
+
+  <div class="article-meta">
+    <span class="article-date">08 May 2016</span>
   </div>
 </article>
 
@@ -77,8 +86,20 @@
 </nav>
 
 </main>
+
   <footer class="app-footer">
-	<script type="text/javascript">
+	<p>
+		Desarrollado por <a href="https://github.com/MyStinkyLab" target="_blank">My Stinky Lab</a> | 
+		Basado en <a href="https://github.com/DrakeLeung/hexo-theme-again">Again - Hexo Theme</a>
+	</p>
+	<p> Powered by <a href="https://hexo.io.com"> Hexo </a> <p>
+</footer>
+
+  <script type="text/javascript">
+  console.log(document.getElementsByTagName('main')[0].classList[0]);
+  </script>
+  <script type="text/javascript" src="/js/app.js" async></script>
+  <script type="text/javascript">
   WebFontConfig = {
     google: { families: [ 'Open+Sans::latin' ] }
   };
@@ -90,13 +111,5 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
   })(); </script>
-	<p>
-		Desarrollado por <a href="https://github.com/fergthh" target="_blank">Fergthh</a> | 
-		Basado en <a href="https://github.com/DrakeLeung/hexo-theme-again">Again - Hexo Theme</a>
-	</p>
-	<p> Powered by <a href="https://hexo.io.com"> Hexo </a> <p>
-</footer>
-
-  <script type="text/javascript" src="/js/app.js" async></script>
 </body>
 </html>
